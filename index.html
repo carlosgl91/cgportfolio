@@ -1,53 +1,132 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Eng. Carlos Giménez </title>
+  <title>Eng. Carlos Giménez</title>
   <style>
-    body { font-family: Arial; max-width: 1000px; margin: auto; padding: 20px; }
-    h2 { color: darkgreen; }
-    img { max-width: 100%; border-radius: 8px; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1a5354;
+    }
+    nav {
+      background-color: #e0f2f1;
+      padding: 10px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1a5354;
+      font-weight: bold;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>Environmental Engineer, Specialist in GIS and Remote Sensing, Carlos Giménez</h1>
 
-  <!-- GEE App -->
-  <section>
-    <h2>Google Earth Engine Apps</h2>
-    <p>Image selection and monitoring App:</p>
-    <a href="" target="_blank">To the App</a>
-     <img src="img/monitoreo.gif" alt="mon1" style="width:100%;height=600; border-radius:10px;">
-    
-    <p>Land use and landcover classification results for the Parguayan Chaco in 2014 and 2019:</p>
-    <a href="" target="_blank">To the App</a>
-     <img src="img/investancia.gif" alt="inv1" style="width:100%;height=600; border-radius:10px;">
+  <h1>Eng. Carlos Giménez – Environmental Engineer</h1>
+  <p>Specialist in GIS, Remote Sensing, Carbon Monitoring, and Environmental Data Science</p>
 
-    <p>Land use and landcover classification results for the Acre state, Brazil:</p>
-    <a href="" target="_blank">To the App</a>
-     <img src="img/ostrya1.gif" alt="ost1" style="width:100%;height=600; border-radius:10px;">
+  <!-- Navigation -->
+  <nav>
+    <a href="#geodatascience">Geodata Science</a>
+    <a href="#remotesensing">Remote Sensing</a>
+    <a href="#carbon">Carbon</a>
+    <a href="#landcover">Land Cover</a>
+    <a href="#datatools">Data Tools</a>
+    <a href="#databases">Databases</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <p>Sentinel 2 image processing App:</p>
+  <!-- Geodata Science -->
+  <section id="geodatascience">
+    <h2>Geodata Science</h2>
+    <p><strong>Covid-19 in Paraguay:</strong> Monitoring COVID-19 incidence and population movement (PAHO & MSPyBS).</p>
+    <a href="https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">To the App</a>
+    <img src="img/covid19.gif" alt="Covid-19 App">
+  </section>
+
+  <!-- Remote Sensing -->
+  <section id="remotesensing">
+    <h2>Remote Sensing</h2>
+    <p><strong>Sentinel-2 Image Processing App:</strong> Processing and visualization tools using GEE.</p>
     <a href="https://github.com/carlosgl91/PINV01-528" target="_blank">To the App</a>
-    <img src="img/pin528.gif" alt="sar1" style="width:100%;height=600; border-radius:10px;">
-    
+    <img src="img/pin528.gif" alt="Sentinel 2 App">
   </section>
 
-  <!-- Shiny App -->
-  <section>
-    <h2>Covid-19 in Paraguay </h2>
-    <p>This tool has been generated from the technical cooperation of the Pan American Health Organization (PAHO) and the Ministry of Public Health and Social Welfare (MSPyBS). The objective of the site is to serve as an interactive tool for monitoring the incidence of COVID-19 disease and the variation in population movement in response to mobility restrictions and the development of the pandemic.</p>
-    <a href=" https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">To the App</a>
-    <img src="img/covid19.gif" alt="sar1" style="width:100%;height=600; border-radius:10px;">
-    <!--<iframe src="https://epi-gis-py.shinyapps.io/covid19py/" width="100%" height="600" style="border:none;"></iframe> -->
-
+  <!-- Carbon -->
+  <section id="carbon">
+    <h2>Carbon Monitoring</h2>
+    <p><strong>Acre State Classification (Brazil):</strong> Supporting carbon accounting and deforestation baseline projects.</p>
+    <a href="#" target="_blank">To the App</a>
+    <img src="img/ostrya1.gif" alt="Acre Project">
   </section>
 
-  <section>
+  <!-- Land Cover -->
+  <section id="landcover">
+    <h2>Land Cover Mapping</h2>
+    <p><strong>Paraguayan Chaco 2014 & 2019:</strong> Land use classification using Google Earth Engine.</p>
+    <a href="#" target="_blank">To the App</a>
+    <img src="img/investancia.gif" alt="Chaco Classification">
+
+    <p><strong>Monitoring App:</strong> Tool for selecting and monitoring vegetation and land changes.</p>
+    <a href="#" target="_blank">To the App</a>
+    <img src="img/monitoreo.gif" alt="Monitoring App">
+  </section>
+
+  <!-- Data Tools -->
+  <section id="datatools">
+    <h2>Data Collection & Tool Development</h2>
+    <p>
+      I develop tools to collect, preprocess, and manage environmental and spatial data, supporting reproducible workflows and efficient monitoring.
+    </p>
+    <ul>
+      <li><strong>GEE Apps:</strong> Created interfaces for selecting and exporting satellite data by time, AOI, and cloud cover.</li>
+      <li><strong>Python/R Scripts:</strong> Automated downloading, cleaning, and transformation of satellite and tabular data.</li>
+      <li><strong>R Shiny Apps:</strong> Built interactive tools for land monitoring and NDVI analysis.</li>
+    </ul>
+  </section>
+
+  <!-- Databases -->
+  <section id="databases">
+    <h2>Database Design & Management</h2>
+    <p>
+      I design and maintain geospatial databases supporting carbon and land monitoring projects across multiple countries.
+    </p>
+    <ul>
+      <li><strong>PostgreSQL/PostGIS:</strong> Built scalable geodatabases for REDD and ARR projects with project boundaries and attributes.</li>
+      <li><strong>GeoNode Integration:</strong> Deployed collaborative spatial data platforms linked to PostgreSQL.</li>
+      <li><strong>SQL + R:</strong> Used SQL queries to drive automated reports and spatial analysis workflows.</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact</h2>
-   <a href= "carlos.gimenez@showmewhere.com">carlos.gimenez@showmewhere.com</a>
-  
-
+    <p>Email: <a href="mailto:carlos.gimenez@showmewhere.com">carlos.gimenez@showmewhere.com</a></p>
   </section>
+
 </body>
 </html>
