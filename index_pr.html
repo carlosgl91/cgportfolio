@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Eng. Carlos Giménez</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #fefefe;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1a5354;
+    }
+    nav {
+      background-color: #e0f2f1;
+      padding: 10px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1a5354;
+      font-weight: bold;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<section id="hero" style="text-align: center; padding: 40px 20px; background-color: #e0f2f1; border-radius: 12px; margin-bottom: 40px;">
+  <h1 style="color: #1a5354; font-size: 2.5em;">Carlos Giménez</h1>
+  <p style="font-size: 1.2em;">Engenheiro Ambiental | Especialista em SIG e Sensoriamento Remoto | Analista de Carbono e Uso da Terra</p>
+  <p>
+    <a href="https://github.com/carlosgl91" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank">LinkedIn</a> |
+    <a href="docs/Carlos_Gimenez_CV.pdf" target="_blank">Baixar Currículo</a>
+  </p>
+  <div style="text-align: right; margin-top: -10px;">
+    <a href="index.html"><img src="img/en_flag.png" alt="English" title="English" style="width:32px; margin: 5px;"></a>
+    <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español" style="width:32px; margin: 5px;"></a>
+    <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch" style="width:32px; margin: 5px;"></a>
+    <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português" style="width:32px; margin: 5px;"></a>
+  </div>
+</section>
+
+<nav>
+  <a href="#geodatascience">Ciência de Dados Geoespaciais</a>
+  <a href="#remotesensing">Sensoriamento Remoto</a>
+  <a href="#carbon">Carbono</a>
+  <a href="#landcover">Cobertura da Terra</a>
+  <a href="#datatools">Ferramentas</a>
+  <a href="#databases">Bancos de Dados</a>
+  <a href="#contact">Contato</a>
+</nav>
+
+<section id="geodatascience">
+  <h2>Ciência de Dados Geoespaciais</h2>
+  <p><strong><a href="https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">Covid-19 no Paraguai:</a></strong> Monitoramento da incidência da COVID-19 e do impacto do movimento populacional durante a pandemia (OPAS & MSPyBS-Paraguai).</p>
+  <img src="img/covid19.gif" alt="Aplicativo Covid-19">
+</section>
+
+<section id="remotesensing">
+  <h2>Sensoriamento Remoto</h2>
+  <p><strong><a href="https://github.com/carlosgl91/PINV01-528" target="_blank">Aplicativo de Processamento de Imagens Sentinel-2:</a></strong> Ferramenta baseada em GEE para o processamento de imagens no âmbito dos projetos PINV01-528 e PINV01-530, financiados pelo CONACYT-Paraguai. Tem como objetivo gerar imagens espaço-temporais com estatísticas por pixel (dimensão temporal), como média, intervalo, mediana, desvio padrão, entre outras, a partir de um conjunto de parâmetros (limites, período de tempo, tipo ...
+  <img src="img/pin528.gif" alt="App Sentinel 2">
+  <p><strong>Aplicativo de Monitoramento da Cobertura da Terra:</strong> Ferramenta que integra diferentes fontes de imagens de satélite para gerar estatísticas significativas sobre uma área, considerando um período de referência e um período atual.</p>
+  <img src="img/monitoreo.gif" alt="App de Monitoramento">
+</section>
+
+<section id="carbon">
+  <h2>Monitoramento de Estoques de Carbono e Emissões de GEE – MRV</h2>
+  <p><strong>Classificação do uso e cobertura da terra, análise de mudanças e avaliação de precisão no Estado do Acre (Brasil):</strong> Apoio à contabilização de estoques de carbono e emissões de gases de efeito estufa (GEE), bem como ao estabelecimento de linhas de base de desmatamento para projetos REDD na Floresta Amazônica.</p>
+  <img src="img/ostrya1.gif" alt="Projeto Acre">
+</section>
+
+<section id="landcover">
+  <h2>Mapeamento da Cobertura da Terra</h2>
+  <p><strong>Classificação do uso e cobertura da terra no Chaco Paraguaio 2014 & 2019:</strong> Análise de mudanças e avaliações de precisão para o desenvolvimento de projetos baseados em soluções baseadas na natureza (REDD e projetos de reflorestamento - ARR).</p>
+  <img src="img/investancia.gif" alt="Classificação Chaco">
+</section>
+
+<section id="datatools">
+  <h2>Coleta de Dados e Desenvolvimento de Ferramentas</h2>
+  <p>
+    Desenvolvimento de ferramentas para coletar, pré-processar e gerenciar dados ambientais e espaciais, promovendo fluxos de trabalho reprodutíveis e monitoramento eficiente.
+  </p>
+  <ul>
+    <li><strong>Aplicativos GEE:</strong> Interfaces para selecionar e exportar dados de satélite por período, área de interesse e cobertura de nuvens.</li>
+    <li><strong>Scripts Python/R:</strong> Automatização da coleta, limpeza e transformação de dados satelitais e tabulares.</li>
+    <li><strong>Apps em R Shiny:</strong> Ferramentas interativas para monitoramento da terra e análise de NDVI.</li>
+  </ul>
+</section>
+
+<section id="databases">
+  <h2>Design e Gestão de Bancos de Dados</h2>
+  <p>
+    Projeto e manutenção de bancos de dados geoespaciais para projetos de monitoramento de carbono e uso da terra em diversos países.
+  </p>
+  <ul>
+    <li><strong>PostgreSQL/PostGIS:</strong> Desenvolvimento de geobancos escaláveis para projetos REDD e ARR com polígonos e atributos.</li>
+    <li><strong>Integração com GeoNode:</strong> Plataformas colaborativas para compartilhamento de dados geoespaciais.</li>
+    <li><strong>SQL + R:</strong> Consultas SQL para geração de relatórios automatizados e análises espaciais.</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contato</h2>
+  <p>Email: <a href="mailto:carlos.gimenez@showmewhere.com">carlos.gimenez@showmewhere.com</a></p>
+</section>
+
+</body>
+</html>
