@@ -13,6 +13,7 @@
 
   <style>
     #map { height: 400px; }
+    
     body {
       font-family: Arial, sans-serif;
       max-width: 1000px;
@@ -107,19 +108,29 @@
   </script>
 
   <div id="content">
-    
+  
   </div>
 
-  <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f0f0f0; border-radius: 8px;">
-    <p>&copy; <span id="currentYear"></span> Carlos Giménez. All rights reserved.</p>
-    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
-  </footer>
+  
   <!-- JS: Leaflet primero -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
           crossorigin=""></script>
 
+
+<section class="map-section-container"> 
+  <h2>Project in which I worked</h2>
+  <div id="map"></div>
+</section>
+
+ <script src="map.js">
  
+</script>
+
+<footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f0f0f0; border-radius: 8px;">
+    <p>&copy; <span id="currentYear"></span> Carlos Giménez. All rights reserved.</p>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+  </footer>
  
 </body>
 </html>

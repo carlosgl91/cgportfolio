@@ -1,0 +1,128 @@
+<style>
+  /* Styles specific to the Teaching section */
+  .teaching-container {
+    background-color: #f9f9f9; /* Light background for the content area */
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+
+  .teaching-container h2 { /* Main heading for the Teaching section */
+    color: #1a5354; /* Theme color */
+    text-align: left;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0f2f1; /* Light theme accent */
+  }
+
+  .course-entry {
+    background-color: #ffffff; /* White background for each course entry */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .course-entry:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Slightly more pronounced shadow on hover */
+  }
+
+  .course-entry h3 { /* Course title */
+    color: #054734; /* Darker green for course titles */
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.6em;
+  }
+
+  .course-details {
+    font-size: 1.1em;
+    color: #333; /* Dark grey for details text */
+    margin-bottom: 10px;
+  }
+  
+  .course-details strong {
+    color: #1a5354; /* Theme color for strong elements like 'Institution:' */
+  }
+
+  .course-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555; /* Medium grey for description */
+    margin-top: 15px;
+  }
+
+  .course-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .course-description ul li {
+    margin-bottom: 5px;
+  }
+
+  /* Responsive adjustments if needed */
+  @media (max-width: 768px) {
+    .teaching-container {
+      padding: 20px;
+    }
+    .course-entry h3 {
+      font-size: 1.4em;
+    }
+    .course-details {
+      font-size: 1em;
+    }
+  }
+</style>
+
+<div class="teaching-container">
+  <h2>My Teaching Experience</h2>
+
+  <div class="course-entry">
+    <h3>Methods of Geostatistics</h3>
+    <p class="course-details">
+      <strong>Institution:</strong> Facultad Politécnica, Universidad Nacional de Asunción (FP-UNA)<br>
+      <strong>Program:</strong> Diploma in Statistics and Data Analysis <br>
+      <strong>Level:</strong>Postgraduate<br>
+      <strong>Years Taught:</strong> 2023
+    </p>
+    <div class="course-description">
+      <p>
+        Taught a comprehensive course on Geostatistics. Key topics and responsibilities included:
+      </p>
+      <ul>
+        <li>Fundamental concepts of spatial statistics and data analysis.</li>
+        <li>Variogram modeling and kriging techniques.</li>
+        <li>Application of geostatistical methods to real-world.</li>
+        <li>Hands-on exercises using relevant software (e.g., R and QGIS).</li>
+        <li>Developed course materials and assessments.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="course-entry">
+    <h3>Introduction to PyQGIS</h3>
+    <p class="course-details">
+      <strong>Institution:</strong> Facultad de Ciencias Agrarias, Universidad Nacional de Asunción (FCA-UNA)<br>
+      <strong>Department/Program:</strong> UNDP - GIS and Remote Sensing capactitation <br>
+      <strong>Level:</strong> Workshop <br>
+      <strong>Years Taught:</strong> 2023
+    </p>
+    <div class="course-description">
+      <p>
+        Delivered an introductory course/workshop on PyQGIS for automating geospatial workflows within QGIS. Covered areas:
+      </p>
+      <ul>
+        <li>Basics of Python scripting for GIS.</li>
+        <li>Understanding the QGIS API and its core components (layers, features, geometry).</li>
+        <li>Writing scripts to load, process, and analyze vector and raster data.</li>
+        <li>Developing custom processing tools with the Model Designer .</li>
+        <li>Practical examples relevant to agricultural sciences and environmental management.</li>
+        <li> Guided students through practical coding exercises.</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>

@@ -1,5 +1,5 @@
 <style>
-  /* Styles specific to the about_me section, from your provided code */
+  /* Styles specific to the about_me section */
   .profile-container {
     display: flex;
     flex-wrap: wrap;
@@ -20,13 +20,14 @@
     min-width: 200px; 
     text-align: center;
   }
-  .profile-left img {
+  .profile-left img { /* For the profile image */
     border-radius: 50%;
     width: 160px;
     height: 160px;
     object-fit: cover;
     border: 3px solid #fff;
     margin-bottom: 15px; 
+    margin-top: 0; /* Override general img margin-top from index.html */
   }
   .profile-name {
     font-size: 1.8em; 
@@ -34,7 +35,7 @@
     margin-top: 15px;
     color: #fff; 
   }
-  .profile-chinese { 
+  .profile-chinese { /* Retained from original CSS */
     font-size: 26px;
     font-weight: bold;
   }
@@ -101,30 +102,28 @@
     transform: translateY(-2px);
   }
   /* Styles for the map section heading */
-  .map-section-container h2 { 
+  .map-section-container h2 { /* Class on the section containing the map */
     color: #1a5354; 
     text-align: center;
     margin-bottom: 20px;
   }
 </style>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 <div class="profile-container">
   <div class="profile-left">
     <img src="../img/profile.jpg" alt="Profile picture of Carlos Giménez" /> 
     <div class="profile-name">Carlos Giménez</div>
-    <div class="profile-title">GIS and RS Specialist<br/>
-      CEO at Showmerewhere.com <br/>
+    <div class="profile-title">Environmental engineer | GIS and RS Specialist<br/>
+      CEO at showmerewhere.com <br/>
       Associate researcher at:<br/>
-      - Facultad Politécnica - UNA (FP-UNA)<br/>
-      - Fundación Moisés Bertoni
+      Facultad Politécnica - UNA (FP-UNA)<br/>
+      and Fundación Moisés Bertoni
     </div>
     <div class="profile-icons">
-      <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      <a href="mailto:carlos.gimenez@showmewhere.com" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://github.com/carlosgl91" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="#" title="ID/Badge"><i class="fas fa-id-badge"></i></a>
+      <a href="https://scholar.google.com/citations?user=B53XXjIAAAAJ&hl=es" title="_blank"><i class="ai ai-google-scholar-square"></i></a>
     </div>
   </div>
   
@@ -158,9 +157,3 @@
   </div>
 </div>
 
-<section class="map-section-container"> 
-  <h2>My Work Locations</h2>
-  <div id="map"></div>
-</section>
-
-<script src="../map.js"></script>

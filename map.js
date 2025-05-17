@@ -1,6 +1,4 @@
-// Archivo: map.js
-
-// Lista de proyectos con país, nombre, tipo y enlace (más una coordenada de ejemplo para cada uno)
+ // Lista de proyectos con país, nombre, tipo y enlace (más una coordenada de ejemplo para cada uno)
 const projects = [
   { country_code: 'BRA', 
      project_name: 'ENVIRA',
