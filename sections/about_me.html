@@ -107,11 +107,17 @@
     text-align: center;
     margin-bottom: 20px;
   }
+
+  .profile-right .about_titles { /* Ahora es más específico (0,2,0) */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold; 
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 <div class="profile-container">
   <div class="profile-left">
-    <img src="../img/profile.jpg" alt="Profile picture of Carlos Giménez" /> 
+    <img src="../img/profile.png" alt="Profile picture of Carlos Giménez" /> 
     <div class="profile-name">Carlos Giménez</div>
     <div class="profile-title">Environmental engineer | GIS and RS Specialist<br/>
       CEO at showmerewhere.com <br/>
@@ -128,7 +134,8 @@
   </div>
   
   <div class="profile-right">
-    <h2>About Me</h2> 
+    <p class="about_titles"> About Me </p> 
+
     <p>
     I'm an Environmental engineer with interest in landscape ecology, carbon dynamics and 
     software development. I have specialized in Remote Sensing (RS) and Geographic Informations Systems (GIS)
@@ -137,7 +144,7 @@
     </p>
     <a class="download-btn" href="../cv/cg_web_CV_16_05_2025_EN.pdf" target="_blank">Download CV</a>
 
-    <h3>Interests</h3>
+    <p class="about_titles">Interests </p> 
     <ul>
       <li>Landscape ecology</li>
       <li>Wildlife conservation</li>
@@ -148,8 +155,8 @@
       <li>Web GIS development</li>
     </ul>
 
-    <h3>Education</h3>
-    <ul>
+    <p class="about_titles">Education </p> 
+     <ul>
       <li>Data Science with Python – Comunera University, Paraguay</li>
       <li>GIS and Remote Sensing Diploma – University of the Pacific, Paraguay</li>
       <li>BSc Environmental Engineering – FCA - National University of Asunción </li>

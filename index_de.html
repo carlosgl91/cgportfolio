@@ -2,130 +2,214 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ing. Carlos Giménez</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       max-width: 1000px;
       margin: auto;
       padding: 20px;
       line-height: 1.6;
-      background-color: #fefefe;
+      background-color: #f8f9fa;
       color: #333;
     }
-    h1, h2 {
+    #hero { 
+      background-color: #e0f2f1;
+      border-radius: 12px;
+      padding: 50px 30px;
+      margin-bottom: 40px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    #hero h1 {
+      color: #134e4a;
+      font-size: 3.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    #hero .subtitle {
+      font-size: 1.25em;
+      color: #115e59;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    #hero .contact-links {
+      margin-bottom: 30px;
+    }
+    #hero .contact-links a { 
+      color: #0d9488;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 1.1em;
+      font-weight: 500;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+    #hero .contact-links a:hover {
+      color: #134e4a;
+      text-decoration: underline;
+    }
+    #hero .contact-links a i {
+      margin-right: 6px;
+      color: #14b8a6;
+    }
+    #hero .contact-links a:hover i {
+      color: #134e4a;
+    }
+    #hero .language-flags {
+      margin-top: 25px;
+      display: flex; 
+      justify-content: center; 
+      gap: 18px;
+    }
+    #hero .language-flags img {
+      width: 36px; 
+      height: auto;
+      margin: 0; 
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      border: 2px solid white;
+    }
+    #hero .language-flags img:hover {
+      transform: scale(1.15) translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    }
+    #content h2, 
+    #content h3 {
       color: #1a5354;
     }
+    #content .course-entry h3, 
+    #content .research-entry h3 { 
+      color: #054734;
+    }
     nav {
-      background-color: #e0f2f1;
-      padding: 10px;
-      margin-bottom: 30px;
+      background-color: #ffffff; 
+      padding: 18px 10px;
+      margin-bottom: 40px; 
       border-radius: 10px;
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 10px;
+      z-index: 1000;
     }
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #1a5354;
-      font-weight: bold;
+      color: #134e4a;
+      font-weight: 500;
+      font-size: 1.0em;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      position: relative; 
+    }
+    nav a:hover {
+      color: #ffffff;
+      background-color: #14b8a6;
     }
     section {
       margin-bottom: 50px;
     }
     img {
-      width: 100%;
-      max-height: 600px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-top: 10px;
+      max-width: 100%;
+      height: auto; 
     }
     ul {
       padding-left: 20px;
+    }
+    #map { 
+      height: 400px; 
+      margin-top:20px;
+      border: 1px solid #e0e0e0; 
+      border-radius: 8px; 
+    }
+    .about_titles {
+      color: #ffffff;
+      font-size: 40px;
+    }
+    .map-section-container h2 {
+      color: #1a5354; 
+      text-align: center;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
-<section id="hero" style="text-align: center; padding: 40px 20px; background-color: #e0f2f1; border-radius: 12px; margin-bottom: 40px;">
-  <h1 style="color: #1a5354; font-size: 2.5em;">Carlos Giménez</h1>
-  <p style="font-size: 1.2em;">Umweltingenieur | Spezialist für GIS & Fernerkundung | Analyst für Kohlenstoff und Landnutzung</p>
-  <p>
-    <a href="https://github.com/carlosgl91" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank">LinkedIn</a> |
-    <a href="docs/Carlos_Gimenez_CV.pdf" target="_blank">Lebenslauf herunterladen</a>
-  </p>
-  <div style="text-align: right; margin-top: -10px;">
-    <a href="index.html"><img src="img/en_flag.png" alt="English" title="English" style="width:32px; margin: 5px;"></a>
-    <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español" style="width:32px; margin: 5px;"></a>
-    <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch" style="width:32px; margin: 5px;"></a>
-    <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português" style="width:32px; margin: 5px;"></a>
-  </div>
-</section>
+  <section id="hero">
+    <h1>Carlos Giménez</h1>
+    <p class="subtitle">Umweltingenieur | Spezialist für GIS & Fernerkundung | Analyst für Kohlenstoff und Landnutzung</p>
+    <p class="contact-links">
+      <a href="https://github.com/carlosgl91" target="_blank"><i class="fab fa-github"></i>GitHub</a> |
+      <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a> |
+      <a href="cv/cg_web_CV_16_05_2025_EN.pdf" target="_blank"><i class="fas fa-file-pdf"></i>Lebenslauf herunterladen</a> </p>
+    <div class="language-flags">
+      <a href="index.html"><img src="img/en_flag.png" alt="Englisch" title="Englisch"></a>
+      <a href="index_es.html"><img src="img/es_flag.png" alt="Spanisch" title="Spanisch"></a>
+      <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch"></a>
+      <a href="index_pt.html"><img src="img/brazil_flag.png" alt="Portugiesisch" title="Portugiesisch"></a>
+    </div>
+  </section>
 
-<nav>
-  <a href="#geodatascience">Geodatenwissenschaft</a>
-  <a href="#remotesensing">Fernerkundung</a>
-  <a href="#carbon">Kohlenstoff</a>
-  <a href="#landcover">Landbedeckung</a>
-  <a href="#datatools">Datenerhebung</a>
-  <a href="#databases">Datenbanken</a>
-  <a href="#contact">Kontakt</a>
-</nav>
+  <nav>
+    <a href="#" onclick="loadSection('about_me'); return false;">Über mich</a>
+    <a href="#" onclick="loadSection('geodatascience'); return false;">Geodatenwissenschaft</a>
+    <a href="#" onclick="loadSection('remotesensing'); return false;">Fernerkundung</a>
+    <a href="#" onclick="loadSection('carbon'); return false;">Kohlenstoff</a>
+    <a href="#" onclick="loadSection('datatools'); return false;">Datenerfassung</a>
+    <a href="#" onclick="loadSection('databases'); return false;">Projektdatenbanken</a>
+    <a href="#" onclick="loadSection('Research'); return false;">Forschung</a>
+    <a href="#" onclick="loadSection('Teaching'); return false;">Lehre</a>
+    <a href="#" onclick="loadSection('contact'); return false;">Kontakt</a>
+  </nav>
 
-<section id="geodatascience">
-  <h2>Geodatenwissenschaft</h2>
-  <p><strong><a href="https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">Covid-19 in Paraguay:</a></strong> Überwachung der COVID-19-Inzidenz und der Auswirkungen der Bevölkerungsbewegung während der Pandemie (PAHO & MSPyBS-Paraguay).</p>
-  <img src="img/covid19.gif" alt="Covid-19 App">
-</section>
+  <div id="content">
+    </div>
 
-<section id="remotesensing">
-  <h2>Fernerkundung</h2>
-  <p><strong><a href="https://github.com/carlosgl91/PINV01-528" target="_blank">Sentinel-2 Bildverarbeitungs-App:</a></strong> GEE-basierte Anwendung zur Bildverarbeitung im Rahmen der Projekte PINV01-528 und PINV01-530, gefördert vom Nationalen Rat für Wissenschaft und Technologie (CONACYT-Paraguay). Ziel ist die Erstellung raum-zeitlicher Bilder, die pixelbasierte Statistiken (zeitliche Dimension) wie Mittelwert, Spannweite, Median, Standardabweichung und andere auf Basis von Parametern (Gebietsgrenzen, Zeitraum, zeitliche Aggregation, räumliche Filter usw.) liefern. Diese Bilder werden als Zeitreihen für ökologische Nischenmodelle (ENM) verwendet, um die Habitat-Eignung für verschiedene Arten zu modellieren – von Krankheitsüberträgern bis hin zu Wildtieren in Schutzgebieten.</p>
-  <img src="img/pin528.gif" alt="Sentinel-2 App">
-  <p><strong>App zur Landbedeckungsüberwachung:</strong> Ein Werkzeug zur Kombination verschiedener Satellitendatenquellen, deren Verarbeitung und zur Generierung aussagekräftiger Statistiken für ein bestimmtes Gebiet unter Verwendung von Referenz- und aktuellen Zeiträumen.</p>
-  <img src="img/monitoreo.gif" alt="Monitoring App">
-</section>
+  <script>
+    function loadSection(name) {
+      // Für eine vollständig übersetzte Version könnten Sie erwägen, 'sections/' + name + '_de.html' zu laden
+      fetch(`sections/${name}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error("Abschnitt nicht gefunden");
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('content').innerHTML = "<p>Fehler beim Laden des Inhalts.</p>";
+          console.error(err);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      loadSection('about_me'); // Lädt standardmäßig den Abschnitt 'about_me'
+    });
+  </script>
 
-<section id="carbon">
-  <h2>Überwachung von Kohlenstoffspeichern und THG-Emissionen – MRV</h2>
-  <p><strong>Landnutzungs- und Landbedeckungsklassifikation, Änderungsanalyse und Genauigkeitsbewertung im Bundesstaat Acre (Brasilien):</strong> Unterstützung der Bilanzierung von Kohlenstoffspeichern und Treibhausgasemissionen sowie der Entwicklung von Entwaldungs-Baselines für REDD-Projekte im Amazonas-Regenwald.</p>
-  <img src="img/ostrya1.gif" alt="Projekt Acre">
-</section>
+  <section class="map-section-container"> 
+    <h2>Bearbeitete Projekte</h2>
+    <div id="map"></div>
+  </section>
 
-<section id="landcover">
-  <h2>Landbedeckungskartierung</h2>
-  <p><strong>Landnutzungs- und Landbedeckungsklassifikation im paraguayischen Chaco 2014 & 2019:</strong> Analyse von Landnutzungsänderungen und Genauigkeitsbewertungen für Projekte basierend auf naturbasierten Lösungen (REDD und Aufforstungs-/Wiederaufforstungsprojekte – ARR).</p>
-  <img src="img/investancia.gif" alt="Chaco Kartierung">
-</section>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="map.js"></script>
 
-<section id="datatools">
-  <h2>Datenerhebung & Toolentwicklung</h2>
-  <p>
-    Ich entwickle Werkzeuge zur Erfassung, Vorverarbeitung und Verwaltung von Umwelt- und Geodaten, um reproduzierbare Arbeitsabläufe und ein effizientes Monitoring zu unterstützen.
-  </p>
-  <ul>
-    <li><strong>GEE-Apps:</strong> Schnittstellen zur Auswahl und zum Export von Satellitendaten nach Zeitraum, AOI und Wolkenbedeckung.</li>
-    <li><strong>Python/R-Skripte:</strong> Automatisierte Sammlung, Bereinigung und Transformation von Satelliten- und Tabellendaten.</li>
-    <li><strong>R Shiny Apps:</strong> Interaktive Tools zur Überwachung der Landnutzung und NDVI-Analyse.</li>
-  </ul>
-</section>
-
-<section id="databases">
-  <h2>Datenbankdesign & Verwaltung</h2>
-  <p>
-    Ich entwerfe und verwalte Geodatenbanken zur Unterstützung von Kohlenstoff- und Landüberwachungsprojekten in mehreren Ländern.
-  </p>
-  <ul>
-    <li><strong>PostgreSQL/PostGIS:</strong> Entwicklung skalierbarer Geodatenbanken für REDD- und ARR-Projekte mit Projektgrenzen und Attributen.</li>
-    <li><strong>GeoNode-Integration:</strong> Implementierung kollaborativer Plattformen für den Austausch räumlicher Daten.</li>
-    <li><strong>SQL + R:</strong> Verwendung von SQL-Abfragen zur Erstellung automatisierter Berichte und räumlicher Analysen.</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Kontakt</h2>
-  <p>Email: <a href="mailto:carlos.gimenez@showmewhere.com">carlos.gimenez@showmewhere.com</a></p>
-</section>
-
+  <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f0f0f0; border-radius: 8px;">
+    <p>&copy; <span id="currentYear"></span> Carlos Giménez. Alle Rechte vorbehalten.</p>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+  </footer>
+  
 </body>
 </html>
