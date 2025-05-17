@@ -1,89 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eng. Carlos Giménez</title>
 
-  <!-- Leaflet y MarkerCluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
   <style>
-    #map { height: 400px; }
-    
     body {
-      font-family: Arial, sans-serif;
+      /* Using a modern system font stack for better rendering across devices */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       max-width: 1000px;
       margin: auto;
       padding: 20px;
       line-height: 1.6;
-      background-color: #fefefe;
+      background-color: #f8f9fa; /* Slightly off-white background for the page */
       color: #333;
     }
-    h1, h2 {
-      color: #1a5354;
+    #hero { 
+        background-color: #e0f2f1; /* Keeping the light teal background */
+        border-radius: 12px;
+        padding: 50px 30px; /* Increased padding */
+        margin-bottom: 40px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Added a subtle shadow to the hero section */
     }
+    #hero h1 {
+        color: #134e4a; /* Darker, richer teal for name for better contrast */
+        font-size: 3.2em; /* Larger font size for the name */
+        font-weight: 700; /* Bolder */
+        margin-bottom: 10px; /* Space below the name */
+        letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+    }
+    #hero .subtitle { /* Class for the subtitle paragraph */
+        font-size: 1.25em; /* Slightly adjusted subtitle size */
+        color: #115e59; /* A slightly richer teal for subtitle */
+        margin-bottom: 30px; /* More space below subtitle */
+        line-height: 1.5;
+    }
+    #hero .contact-links { /* Container for GitHub, LinkedIn, CV links */
+        margin-bottom: 30px; /* Space below contact links */
+    }
+    #hero .contact-links a { 
+        color: #0d9488; /* Teal color for links */
+        text-decoration: none;
+        margin: 0 12px; /* Adjusted spacing */
+        font-size: 1.1em;
+        font-weight: 500; /* Medium weight */
+        transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+    #hero .contact-links a:hover {
+        color: #134e4a; /* Darker teal on hover */
+        text-decoration: underline;
+    }
+    #hero .contact-links a i { /* Icon styling */
+        margin-right: 6px; /* Space between icon and text */
+        color: #14b8a6; /* Slightly brighter teal for icons */
+    }
+    #hero .contact-links a:hover i {
+        color: #134e4a; /* Match text color on hover */
+    }
+
+
+    #hero .language-flags {
+        margin-top: 25px; /* Adjusted space above flags */
+        display: flex; 
+        justify-content: center; 
+        gap: 18px; /* Increased space between flags */
+    }
+    #hero .language-flags img {
+      width: 36px; 
+      height: auto;
+      margin: 0; 
+      border-radius: 50%; /* Circular flags */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      border: 2px solid white; /* Optional: white border around flags */
+    }
+    #hero .language-flags img:hover {
+        transform: scale(1.15) translateY(-2px); /* More noticeable zoom and slight lift */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    }
+
+    /* General heading styles for sections loaded into #content */
+    /* These will apply to h2, h3 inside the #content div */
+    #content h2, 
+    #content h3 {
+      color: #1a5354; /* Default heading color for sections */
+    }
+    /* Specific overrides for course/research entry titles if needed */
+    #content .course-entry h3, 
+    #content .research-entry h3 { 
+        color: #054734; /* Darker green for these specific titles */
+    }
+
+
     nav {
-      background-color: #e0f2f1;
-      padding: 10px;
-      margin-bottom: 30px;
-      border-radius: 10px;
+      background-color: #ffffff; 
+      padding: 18px 10px; /* Increased vertical padding */
+      margin-bottom: 40px; 
+      border-radius: 10px; /* Slightly more rounded */
       text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Softer, more diffused shadow */
+      position: sticky; /* Make nav sticky */
+      top: 10px; /* Small space from top when sticky */
+      z-index: 1000; /* Ensure it stays above other content */
     }
     nav a {
-      margin: 0 15px;
+      margin: 0 15px; /* Adjusted spacing */
       text-decoration: none;
-      color: #1a5354;
-      font-weight: bold;
+      color: #134e4a; /* Darker teal for nav links */
+      font-weight: 500; /* Medium weight */
+      font-size: 1.0em; /* Adjusted font size */
+      padding: 8px 12px; /* Add padding to make clickable area larger */
+      border-radius: 6px; /* Rounded corners for links (for hover effect) */
+      transition: color 0.2s ease, background-color 0.2s ease;
+      position: relative; 
     }
-    section {
+    nav a:hover {
+      color: #ffffff; /* White text on hover */
+      background-color: #14b8a6; /* Brighter teal background on hover */
+    }
+    /* Removing the underline hover effect as we now have a background hover */
+    /* nav a::after { ... } */
+    /* nav a:hover::after { ... } */
+
+
+    section { /* General section styling */
       margin-bottom: 50px;
     }
-    img {
-      width: 100%;
-      max-height: 600px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-top: 10px;
+    
+     img {
+      max-width: 100%; /* Images will not exceed the width of their container */
+      height: auto;    /* Maintain aspect ratio */
+      display: block;  /* Removes extra space below inline images */
+      /* border-radius: 10px; /* Keep if you want all images rounded, or make it more specific */
+      /* margin-top: 10px;   /* Keep if you want top margin for all images, or make it more specific */
     }
+    
     ul {
       padding-left: 20px;
+    }
+    #map { 
+      height: 400px; 
+      margin-top:20px;
+      border: 1px solid #e0e0e0; 
+      border-radius: 8px; 
     }
   </style>
 </head>
 <body>
 
-  <section id="hero" style="text-align: center; padding: 40px 20px; background-color: #e0f2f1; border-radius: 12px; margin-bottom: 40px;">
-    <h1 style="color: #1a5354; font-size: 2.5em;">Carlos Giménez</h1>
-    <p style="font-size: 1.2em;">Environmental Engineer | GIS & Remote Sensing Specialist | Carbon & Land Use Analyst</p>
-    <p>
-      <a href="https://github.com/carlosgl91" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank">LinkedIn</a> |
-      <a href="docs/Carlos_Gimenez_CV.pdf" target="_blank">Download CV</a>
+  <section id="hero">
+    <h1>Carlos Giménez</h1>
+    <p class="subtitle">Environmental Engineer | GIS & Remote Sensing Specialist | Carbon & Land Use Analyst</p>
+    <p class="contact-links">
+      <a href="https://github.com/carlosgl91" target="_blank"><i class="fab fa-github"></i>GitHub</a> |
+      <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a> |
+      <a href="cv/cg_web_CV_16_05_2025_EN.pdf" target="_blank"><i class="fas fa-file-pdf"></i>Download CV</a>
     </p>
-    <div style="text-align: right; margin-top: -10px;">
-      <a href="index.html"><img src="img/en_flag.png" alt="English" title="English" style="width:32px; margin: 5px;"></a>
-      <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español" style="width:32px; margin: 5px;"></a>
-      <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch" style="width:32px; margin: 5px;"></a>
-      <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português" style="width:32px; margin: 5px;"></a>
+    <div class="language-flags">
+      <a href="index.html"><img src="img/en_flag.png" alt="English" title="English"></a>
+      <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español"></a>
+      <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch"></a>
+      <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português"></a>
     </div>
   </section>
 
-  <!-- Navigation -->
   <nav>
-    <a href="#" onclick="loadSection('about_me')">About me</a>
-    <a href="#" onclick="loadSection('geodatascience')">Geodata Science</a>
-    <a href="#" onclick="loadSection('remotesensing')">Remote Sensing</a>
-    <a href="#" onclick="loadSection('carbon')">Carbon</a>
-    <a href="#" onclick="loadSection('datatools')">Data Collection</a>
-    <a href="#" onclick="loadSection('databases')">Project databases</a>
-    <a href="#" onclick="loadSection('Research')">Research</a>
-    <a href="#" onclick="loadSection('Teaching')">Teaching</a>
-    <a href="#" onclick="loadSection('contact')">Contact</a>
+    <a href="#" onclick="loadSection('about_me'); return false;">About me</a>
+    <a href="#" onclick="loadSection('geodatascience'); return false;">Geodata Science</a>
+    <a href="#" onclick="loadSection('remotesensing'); return false;">Remote Sensing</a>
+    <a href="#" onclick="loadSection('carbon'); return false;">Carbon</a>
+    <a href="#" onclick="loadSection('datatools'); return false;">Data Collection</a>
+    <a href="#" onclick="loadSection('databases'); return false;">Project databases</a>
+    <a href="#" onclick="loadSection('Research'); return false;">Research</a>
+    <a href="#" onclick="loadSection('Teaching'); return false;">Teaching</a>
+    <a href="#" onclick="loadSection('contact'); return false;">Contact</a>
   </nav>
+
 
   <script>
     function loadSection(name) {
