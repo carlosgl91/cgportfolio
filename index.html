@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eng. Carlos Giménez</title>
+
+  <!-- Leaflet y MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
   <style>
+    #map { height: 400px; }
     body {
       font-family: Arial, sans-serif;
       max-width: 1000px;
@@ -46,103 +55,71 @@
 </head>
 <body>
 
-    <section id="hero" style="text-align: center; padding: 40px 20px; background-color: #e0f2f1; border-radius: 12px; margin-bottom: 40px;">
-        <h1 style="color: #1a5354; font-size: 2.5em;">Carlos Giménez</h1>
-        <p style="font-size: 1.2em;">Environmental Engineer | GIS & Remote Sensing Specialist | Carbon & Land Use Analyst</p>
-        <p>
-          <a href="https://github.com/carlosgl91" target="_blank">GitHub</a> |
-          <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank">LinkedIn</a> |
-          <a href="docs/Carlos_Gimenez_CV.pdf" target="_blank">Download CV</a>
-        </p>
-        <div style="text-align: right; margin-top: -10px;">
-            <a href="index.html"><img src="img/en_flag.png" alt="English" title="English" style="width:32px; margin: 5px;"></a>
-            <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español" style="width:32px; margin: 5px;"></a>
-            <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch" style="width:32px; margin: 5px;"></a>
-            <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português" style="width:32px; margin: 5px;"></a>
-
-        </div>
-
-      </section>
+  <section id="hero" style="text-align: center; padding: 40px 20px; background-color: #e0f2f1; border-radius: 12px; margin-bottom: 40px;">
+    <h1 style="color: #1a5354; font-size: 2.5em;">Carlos Giménez</h1>
+    <p style="font-size: 1.2em;">Environmental Engineer | GIS & Remote Sensing Specialist | Carbon & Land Use Analyst</p>
+    <p>
+      <a href="https://github.com/carlosgl91" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank">LinkedIn</a> |
+      <a href="docs/Carlos_Gimenez_CV.pdf" target="_blank">Download CV</a>
+    </p>
+    <div style="text-align: right; margin-top: -10px;">
+      <a href="index.html"><img src="img/en_flag.png" alt="English" title="English" style="width:32px; margin: 5px;"></a>
+      <a href="index_es.html"><img src="img/es_flag.png" alt="Español" title="Español" style="width:32px; margin: 5px;"></a>
+      <a href="index_de.html"><img src="img/de_flag.png" alt="Deutsch" title="Deutsch" style="width:32px; margin: 5px;"></a>
+      <a href="index_pr.html"><img src="img/brazil_flag.png" alt="Português" title="Português" style="width:32px; margin: 5px;"></a>
+    </div>
+  </section>
 
   <!-- Navigation -->
   <nav>
-    <a href="#geodatascience">Geodata Science</a>
-    <a href="#remotesensing">Remote Sensing</a>
-    <a href="#carbon">Carbon</a>
-    <a href="#landcover">Land Cover</a>
-    <a href="#datatools">Data Tools</a>
-    <a href="#databases">Databases</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="loadSection('about_me')">About me</a>
+    <a href="#" onclick="loadSection('geodatascience')">Geodata Science</a>
+    <a href="#" onclick="loadSection('remotesensing')">Remote Sensing</a>
+    <a href="#" onclick="loadSection('carbon')">Carbon</a>
+    <a href="#" onclick="loadSection('datatools')">Data Collection</a>
+    <a href="#" onclick="loadSection('databases')">Project databases</a>
+    <a href="#" onclick="loadSection('Research')">Research</a>
+    <a href="#" onclick="loadSection('Teaching')">Teaching</a>
+    <a href="#" onclick="loadSection('contact')">Contact</a>
   </nav>
 
-  <!-- Geodata Science -->
-  <section id="geodatascience">
-    <h2>Geodata Science</h2>
-    <p><strong><a href="https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">Covid-19 in Paraguay:</a></strong> Monitoring COVID-19 incidence and population movement impact during COVID-19 pandemic (PAHO & MSPyBS-Paraguay).</p>
+  <script>
+    function loadSection(name) {
+      fetch(`sections/${name}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error("Section not found");
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('content').innerHTML = "<p>Error loading content.</p>";
+          console.error(err);
+        });
+       
+    }
+     // Automatically load the 'about_me' section when the page initially loads
+      document.addEventListener('DOMContentLoaded', function() {
+        loadSection('about_me');
+      });
+  </script>
+
+  <div id="content">
     
-    <img src="img/covid19.gif" alt="Covid-19 App">
-  </section>
+  </div>
 
-  <!-- Remote Sensing -->
-  <section id="remotesensing">
-    <h2>Remote Sensing</h2>
-    <p align="justify"><strong><a href="https://github.com/carlosgl91/PINV01-528" target="_blank"> Sentinel-2 Image Processing App:</a></strong> GEE based app for image processing in the framework of the projects PINV01-528 and PINV01-530 funded by the National Council of Science and Technology (CONACYT-Paraguay). It is intended to produce spatio-temporal images corresponding to pixel based statistics (temporal dimension), such 
-    as the mean, range, median, std between others, given a set of parameters (Boundaries, time period, type of time aggregation, spatial filters, etc.). These images are use as time-series data for ecological nich models (ENMs) in order to model habitat suitability for a set of different species which range from desease vectors to wildlife in natural reserves. </p>
-    <img src="img/pin528.gif" alt="Sentinel 2 App">
-    <p><strong>Land cover monitoring App:</strong> This tool is intended for combining the different sources of satellite
-        imagery, process them and produce insightful statistics over a given area, following a logic of reference vs current period.</p>
-    <img src="img/monitoreo.gif" alt="Monitoring App">
-</section>
+  <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f0f0f0; border-radius: 8px;">
+    <p>&copy; <span id="currentYear"></span> Carlos Giménez. All rights reserved.</p>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+  </footer>
+  <!-- JS: Leaflet primero -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
 
-  <!-- Carbon -->
-  <section id="carbon">
-    <h2>Carbon stocks and GHG emissions monitoring - Measurement, Reporting, and Verification (MRV) </h2>
-    <p><strong>Acre State land use and land cover classification, change analysis and accuracy assessments (Brazil):</strong> Supporting carbon stocks and green house gases (GHG) emissions accounting and deforestation baseline for REDD projects in the Amazon Rainforest.</p>
-   
-    <img src="img/ostrya1.gif" alt="Acre Project">
-  </section>
-
-  <!-- Land Cover -->
-  <section id="landcover">
-    <h2>Land Cover Mapping</h2>
-    <p><strong>Paraguayan Chaco land use and land cover 2014 & 2019:</strong> Land use and land cover classification, change analysis and accuracy assessments (Paraguay), for the development of nature based solutions (NBS) based projects (REDD and aforestation and reforestation projects - ARR)</p>
-  
-    <img src="img/investancia.gif" alt="Chaco Classification">
-
-    
-  </section>
-
-  <!-- Data Tools -->
-  <section id="datatools">
-    <h2>Data Collection & Tool Development</h2>
-    <p>
-      I develop tools to collect, preprocess, and manage environmental and spatial data, supporting reproducible workflows and efficient monitoring.
-    </p>
-    <ul>
-      <li><strong>GEE Apps:</strong> Created interfaces for selecting and exporting satellite data by time, AOI, and cloud cover.</li>
-      <li><strong>Python/R Scripts:</strong> Automated downloading, cleaning, and transformation of satellite and tabular data.</li>
-      <li><strong>R Shiny Apps:</strong> Built interactive tools for land monitoring and NDVI analysis.</li>
-    </ul>
-  </section>
-
-  <!-- Databases -->
-  <section id="databases">
-    <h2>Database Design & Management</h2>
-    <p>
-      I design and maintain geospatial databases supporting carbon and land monitoring projects across multiple countries.
-    </p>
-    <ul>
-      <li><strong>PostgreSQL/PostGIS:</strong> Built scalable geodatabases for REDD and ARR projects with project boundaries and attributes.</li>
-      <li><strong>GeoNode Integration:</strong> Deployed collaborative spatial data platforms linked to PostgreSQL.</li>
-      <li><strong>SQL + R:</strong> Used SQL queries to drive automated reports and spatial analysis workflows.</li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:carlos.gimenez@showmewhere.com">carlos.gimenez@showmewhere.com</a></p>
-  </section>
-
+ 
+ 
 </body>
 </html>

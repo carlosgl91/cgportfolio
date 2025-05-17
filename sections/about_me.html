@@ -1,0 +1,166 @@
+<style>
+  /* Styles specific to the about_me section, from your provided code */
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: #054734;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  .profile-right-about { 
+    color: white;
+  }
+
+  .profile-left {
+    flex: 1;
+    min-width: 200px; 
+    text-align: center;
+  }
+  .profile-left img {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin-bottom: 15px; 
+  }
+  .profile-name {
+    font-size: 1.8em; 
+    font-weight: bold; 
+    margin-top: 15px;
+    color: #fff; 
+  }
+  .profile-chinese { 
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .profile-title {
+    margin: 10px 0;
+    font-size: 1.1em; 
+    color: #e0f2f1; 
+  }
+  .profile-icons { 
+    margin-top: 15px;
+  }
+  .profile-icons a { 
+    color: #fff;
+    margin: 0 10px; 
+    font-size: 22px; 
+    text-decoration: none;
+  }
+  .profile-icons a:hover {
+    color: #a7d7c5; 
+  }
+  .profile-icons i { 
+    cursor: pointer;
+  }
+  .profile-right {
+    flex: 2;
+    min-width: 300px; 
+  }
+   .profile-right h2 { 
+    color: #fff; 
+    border-bottom: 2px solid #a7d7c5; 
+    padding-bottom: 5px;
+    margin-top: 0; 
+  }
+  .profile-right h3 {
+    color: #e0f2f1; 
+    margin-top: 20px;
+  }
+  .profile-right p, .profile-right ul {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #f0f0f0; 
+  }
+  .profile-right ul {
+    list-style-type: disc; 
+    padding-left: 25px; 
+  }
+   .profile-right ul li {
+    margin-bottom: 8px; 
+  }
+  .download-btn {
+    background: #1a5354; 
+    color: white;
+    padding: 12px 25px; 
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 20px 0; 
+    font-weight: bold; 
+    border: 2px solid #a7d7c5; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+  }
+  .download-btn:hover {
+    background: #2b7a78;
+    transform: translateY(-2px);
+  }
+  /* Styles for the map section heading */
+  .map-section-container h2 { 
+    color: #1a5354; 
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="profile-container">
+  <div class="profile-left">
+    <img src="../img/profile.jpg" alt="Profile picture of Carlos Giménez" /> 
+    <div class="profile-name">Carlos Giménez</div>
+    <div class="profile-title">GIS and RS Specialist<br/>
+      CEO at Showmerewhere.com <br/>
+      Associate researcher at:<br/>
+      - Facultad Politécnica - UNA (FP-UNA)<br/>
+      - Fundación Moisés Bertoni
+    </div>
+    <div class="profile-icons">
+      <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://github.com/carlosgl91" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/carlos-gim%C3%A9nez-3b3267169/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" title="ID/Badge"><i class="fas fa-id-badge"></i></a>
+    </div>
+  </div>
+  
+  <div class="profile-right">
+    <h2>About Me</h2> 
+    <p>
+    I'm an Environmental engineer with interest in landscape ecology, carbon dynamics and 
+    software development. I have specialized in Remote Sensing (RS) and Geographic Informations Systems (GIS)
+      as well as in spatial data sciences. I work with different types of organizations providing services related to data analysis,
+      spatial intelligence, biodiversity and carbon technical advisory.
+    </p>
+    <a class="download-btn" href="../cv/cg_web_CV_16_05_2025_EN.pdf" target="_blank">Download CV</a>
+
+    <h3>Interests</h3>
+    <ul>
+      <li>Landscape ecology</li>
+      <li>Wildlife conservation</li>
+      <li>Land cover and Land use dynamics</li>
+      <li>Forest loss and forest degradation</li>
+      <li>Reducing emissions from deforestation and degradation projects (REDD)</li>
+      <li>Reforestation projects</li>
+      <li>Web GIS development</li>
+    </ul>
+
+    <h3>Education</h3>
+    <ul>
+      <li>Data Science with Python – Comunera University, Paraguay</li>
+      <li>GIS and Remote Sensing Diploma – University of the Pacific, Paraguay</li>
+      <li>BSc Environmental Engineering – FCA - National University of Asunción </li>
+    </ul>
+  </div>
+</div>
+
+<section class="map-section-container"> 
+  <h2>My Work Locations</h2>
+  <div id="map"></div>
+</section>
+
+<script src="../map.js"></script>
