@@ -1,0 +1,203 @@
+<style>
+  /* Styles specific to the Research section */
+  .research-container {
+    background-color: #f9f9f9; /* Light background for the content area */
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+
+  .research-container h2 { /* Main heading for the Research section */
+    color: #1a5354; /* Theme color */
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0f2f1; /* Light theme accent */
+  }
+
+  .research-entry {
+    background-color: #ffffff; /* White background for each research entry */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .research-entry:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Slightly more pronounced shadow on hover */
+  }
+
+  .research-entry h3 { /* Project title */
+    color: #054734; /* Darker green for project titles */
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.6em;
+  }
+  
+  .research-entry .project-subtitle { /* For project codes like PINV01-528 */
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .research-details {
+    font-size: 1.1em;
+    color: #333; /* Dark grey for details text */
+    margin-bottom: 10px;
+  }
+  
+  .research-details strong {
+    color: #1a5354; /* Theme color for strong elements like 'Institution:' */
+  }
+
+  .research-summary,
+  .research-activities {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555; /* Medium grey for description */
+    margin-top: 15px;
+  }
+
+  .research-activities ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .research-activities ul li {
+    margin-bottom: 5px;
+  }
+  
+  .publication-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  .publication-link a {
+    color: #1a5354;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .publication-link a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* Responsive adjustments if needed */
+  @media (max-width: 768px) {
+    .research-container {
+      padding: 20px;
+    }
+    .research-entry h3 {
+      font-size: 1.4em;
+    }
+    .research-details {
+      font-size: 1em;
+    }
+  }
+</style>
+
+<div class="research-container">
+  <h2>Research Experience & Projects</h2>
+
+  <div class="research-entry">
+    <h3>AI for Medically Important Vector Prediction</h3>
+    <span class="project-subtitle">Project PINV01-528: "Artificial intelligence applied to the prediction of the spatio-temporal distribution of medically important vectors with a 'One Health' approach"</span>
+    <p class="research-details">
+      <strong>Institution:</strong> National University of Asuncion (Facultad Politécnica) <br>
+      <strong>Funding:</strong> National Council of Science and Technology of Paraguay (CONACYT) <br>
+      <strong>Role:</strong> Associate Researcher <br>
+      <strong>Period:</strong> March 2025 - Present
+    </p>
+    <div class="research-activities">
+      <p>Key activities and contributions:</p>
+      <ul>
+        <li>Generation of data derived from satellite imagery (Sentinel 2) and auxiliary datasets for habitat suitability models across Paraguay.</li>
+        <li>Programming geostatistical applications and tools (GEE, Python, R) for automating the application and evaluation of habitat suitability models.</li>
+        <li>Development of tidy datasets based on spatio-temporal variables.</li>
+        <li>Conducting capacity building workshops on spatial datasets and satellite imagery applications.</li>
+        <li>Contributing to scientific paper writing.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="research-entry">
+    <h3>AI for Ecosystem Conservation using Soundscapes</h3>
+    <span class="project-subtitle">Project PINV01-530: "Soundscapes: Applications of Artificial Intelligence for the Conservation and Use of Ecosystems"</span>
+    <p class="research-details">
+      <strong>Institution:</strong> Moisés Bertoni Foundation <br>
+      <strong>Funding:</strong> National Council of Science and Technology of Paraguay (CONACYT) <br>
+      <strong>Role:</strong> Associate Researcher <br>
+      <strong>Period:</strong> August 2024 - Present
+    </p>
+    <div class="research-activities">
+      <p>Key activities and contributions:</p>
+      <ul>
+        <li>Developing potential distribution models for various taxa using occurrence data, satellite imagery derivatives, climate models, landscape metrics, and acoustic data.</li>
+        <li>Programming geostatistical applications and tools (GEE, Python, R) for model automation and evaluation.</li>
+        <li>Applying and generating landscape ecology metrics, including spatially explicit layers for correlation with acoustic data.</li>
+        <li>Processing satellite imagery data for statistical analysis and modeling.</li>
+        <li>Delimiting high-priority conservation areas based on model-derived indicators.</li>
+        <li>Contributing to scientific paper writing.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="research-entry">
+    <h3>Remote Sensing and Landscape Specialist (Consultancy)</h3>
+    <p class="research-details">
+      <strong>Client:</strong> SilviPar SA <br>
+      <strong>Focus:</strong> Critical habitat analysis, biodiversity net balance, and land cover mapping. <br>
+      <strong>Role:</strong> Remote Sensing and Landscape Specialist (Consultant) <br>
+      <strong>Period:</strong> August 2023 - March 2024
+    </p>
+    <div class="research-activities">
+      <p>Led a multidisciplinary team and conducted research including:</p>
+      <ul>
+        <li>Annual mapping of land cover and use over 1,000,000 hectares in southern Paraguay (2013-2023), emphasizing savanna formations and wetlands.</li>
+        <li>Multitemporal classification using Landsat 8 data, PCA, segmentation (Mean-shift), Random Forest classifications with intra-annual seasonal variables, and accuracy assessments.</li>
+        <li>Fragmentation and connectivity analysis, and proposal of biological corridors.</li>
+        <li>Fire incidence analysis across different land uses.</li>
+        <li>Leading the scientific paper writing..</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="research-entry">
+    <h3>GIS and Remote Sensing Specialization Thesis</h3>
+    <p class="research-details">
+      <strong>Institution:</strong> Universidad del Pacífico, Asunción, Paraguay <br>
+      <strong>Degree:</strong> GIS and Remote Sensing Specialist <br>
+      <strong>Year:</strong> 2020
+    </p>
+    <div class="research-summary">
+      <p>
+        Thesis: "Automated Mapping of COVID-19 Incidence and Population Mobility Variation in Paraguay. A R-Shiny based application."
+      </p>
+    </div>
+    <p class="publication-link">
+      <a href="https://epi-gis-py.shinyapps.io/covid19py/" target="_blank">View Application</a>
+    </p>
+  </div>
+
+  <div class="research-entry">
+    <h3>Environmental Engineering Degree Thesis</h3>
+    <p class="research-details">
+      <strong>Institution:</strong> National University of Asunción, College of Agricultural Sciences, San Lorenzo, Paraguay <br>
+      <strong>Degree:</strong> Environmental Engineer (summa cum laude) <br>
+      <strong>Year:</strong> 2019
+    </p>
+    <div class="research-summary">
+      <p>
+        Thesis: "Analysis of the relationship between total forest biomass and NDVI values in the forest formations of the Cerrado, Concepción, Paraguay."
+      </p>
+    </div>
+    <p class="publication-link">
+      <a href="https://github.com/carlosgl91/cg_bachelor_tesis" target="_blank">View Thesis on GitHub</a>
+    </p>
+  </div>
+
+  </div>
